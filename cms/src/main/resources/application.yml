@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cms_db
+    username: postgres
+    password: 12345Rwanda
+  jpa:
+    hibernate:
+      ddl-auto: update        # auto creates tables from entities
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  servlet:
+    multipart:
+      max-file-size: 10MB     # for image uploads
+
+app:
+  jwt:
+    secret: e4d29f8a3c7b1e5a6f9c8b3d2e1a0f5e6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e
+    expiration: 86400000      # 24 hours in milliseconds
+  upload:
+    path: ./uploads           # local folder for images
